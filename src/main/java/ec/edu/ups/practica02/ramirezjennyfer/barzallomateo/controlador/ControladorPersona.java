@@ -87,14 +87,17 @@ public class ControladorPersona implements IControlador {
         }
     }
 
-    
     public Persona buscarPorNombreDeDisco(String valor) {
-        
+        //Se recorre la lista personas con el forEach
         for (Persona persona : personas) {
+            //Se pregunta si la persona es de tipo Cantante
             if (persona instanceof Cantante) {
+                //Se hace un casting de persona a cantante
                 Cantante cantante = (Cantante) persona;
+                // Se recorre la lista de discografias del cantante
                 for (Disco disco : cantante.getDiscografia()) {
                     if (disco.getNombre().equals(valor)) {
+                        //Se retorna el cantante que tiene el disco y se imprime el nombre y el apellido
                         System.out.println(cantante.getNombre() + " " + cantante.getApellido());
                         return cantante;
                     }
@@ -106,11 +109,17 @@ public class ControladorPersona implements IControlador {
     }
 
     public Persona buscarPorTituloDeCancion(String valor) {
-        for (Persona per : personas) {
-            if (per instanceof Compositor) {
-                Compositor compositor = (Compositor) per;
+        //Se recorre la lista de personas con el forEach
+        for (Persona persona : personas) {
+            //Se pregunta si la persona es de tipo Compositor
+            if (persona instanceof Compositor) {
+                //Se hace un casting de persona a compositor
+                Compositor compositor = (Compositor) persona;
+                //se recorre la lista de cancionesTop100Bilboard
                 for (Cancion cancion : compositor.getCancionesTop100Bilboard()) {
+                    //Se pregunta si el titulo es igual al que se ingreso como parametro
                     if (cancion.getTitulo().equals(valor)) {
+                        //Se retorna el compositor y se imprime el nombre y el apellido del compositor
                         System.out.println(compositor.getNombre() + " " + compositor.getApellido());
                         return compositor;
                     }
@@ -121,9 +130,13 @@ public class ControladorPersona implements IControlador {
     }
 
     public Persona buscarCantanteCodigo(int codigo) {
-        for (Persona persona : personas) { 
+        //Se recorre la lista de personas
+        for (Persona persona : personas) {
+            //Se pregunta por cada persona si es una instancia de cantante
             if (persona instanceof Cantante) {
+                //Se hace casting a cantante de persona
                 Cantante cantanteCasting = (Cantante) persona;
+                //Se verifica si el codigo de la persona es igual al codigo que se ingreso y se lo retorna
                 if (cantanteCasting.getCodigo() == codigo) {
                     return persona;
                 }
@@ -133,15 +146,19 @@ public class ControladorPersona implements IControlador {
     }
 
     public Persona buscarCompositorCodigo(int codigo) {
-        for (Persona persona : personas) { 
+        //Se recorre la lista de personas
+        for (Persona persona : personas) {
+            //Se pregunta por cada persona si es una instancia de cantante
             if (persona instanceof Compositor) {
+                //Se hace casting a cantante de persona
                 Compositor compositorCasting = (Compositor) persona;
+                //Se verifica si el codigo de la persona es igual al codigo que se ingreso y se lo retorna
                 if (compositorCasting.getCodigo() == codigo) {
-                    return persona; 
+                    return persona;
                 }
             }
         }
-        return null; 
+        return null;
     }
 
     // Metodo que permite imprimir
