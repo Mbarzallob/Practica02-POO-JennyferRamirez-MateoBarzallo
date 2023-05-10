@@ -130,4 +130,6 @@ public abstract class Persona {
     public String toString() {
         return "Persona{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", nacionalidad=" + nacionalidad + ", salario=" + salario + '}';
     }
+    
+    
 }

@@ -24,11 +24,9 @@ public class Compositor extends Persona {
         clientes = new ArrayList<>();
     }
     // Constructor donde se encuentran los datos de la clase Compositor más los atributos de la clase padre Persona
-    public Compositor(int numeroDeComposiciones, List<Cancion> cancionesTop100Bilboard, List<Cantante> clientes, int codigo, String nombre, String apellido, int edad, String nacionalidad, double salario) {
+    public Compositor(int numeroDeComposiciones, int codigo, String nombre, String apellido, int edad, String nacionalidad, double salario) {
         super(codigo, nombre, apellido, edad, nacionalidad, salario);
         this.numeroDeComposiciones = numeroDeComposiciones;
-        this.cancionesTop100Bilboard = cancionesTop100Bilboard;
-        this.clientes = clientes;
         cancionesTop100Bilboard = new ArrayList<>();
         clientes = new ArrayList<>();
     }

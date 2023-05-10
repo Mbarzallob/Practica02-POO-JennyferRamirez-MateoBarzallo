@@ -3,10 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ec.edu.ups.practica02.ramirezjennyfer.barzallomateo.modelo;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 /**
- *
+         *
  * @author casa
  */
 
@@ -22,17 +23,18 @@ public class Cantante extends Persona{
 
     // Constructor vacio
     public Cantante() {
+        discografia = new ArrayList<>();
     }
 
     // Constructor donde se encuentran los datos de la clase Cantante más los atributos de la clase padre Persona
-    public Cantante(String nombreArtistico, String generoMusical, int numeroDeSencillos, int numeroDeConciertos, int numeroDeGiras, List<Disco> discografia, int codigo, String nombre, String apellido, int edad, String nacionalidad, double salario) {
+    public Cantante(String nombreArtistico, String generoMusical, int numeroDeSencillos, int numeroDeConciertos, int numeroDeGiras, int codigo, String nombre, String apellido, int edad, String nacionalidad, double salario) {
         super(codigo, nombre, apellido, edad, nacionalidad, salario);
         this.nombreArtistico = nombreArtistico;
         this.generoMusical = generoMusical;
         this.numeroDeSencillos = numeroDeSencillos;
         this.numeroDeConciertos = numeroDeConciertos;
         this.numeroDeGiras = numeroDeGiras;
-        this.discografia = discografia;
+        discografia = new ArrayList<>();
     }
 
     // Getter y setter: Encapsulamiento de los atributos
