@@ -56,7 +56,7 @@ public class Compositor extends Persona {
         this.clientes = clientes;
     }
 
-    // Metodo hashCode: 
+    // Metodo hashCode: Metodo que compara los objetos pasados devolviendo un numero entero 
     @Override
     public int hashCode() {
         int hash = 3;
@@ -66,7 +66,7 @@ public class Compositor extends Persona {
         return hash;
     }
 
-    // Metodo equals: Metodo que permite comparar objetos
+    // Metodo equals: Metodo que permite comparar si los objetos son del mismo tipo
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -99,11 +99,11 @@ public class Compositor extends Persona {
         clientes.add( cliente);
     }
     
-    // Metodo calcularSalario valor extra 
+    // Sobrecarga del metodo calcularSalario de la clase padre Persona 
     @Override
     public double calcularSalario() {
-        double salario =super.getSalario();
-        double pagoExtra=0;
+        double salario = super.getSalario();
+        double pagoExtra = 0;
         if(cancionesTop100Bilboard.size() >= 1 && cancionesTop100Bilboard.size() <= 3){
             pagoExtra = (salario * 10.0) / 100.0;
         } else if(cancionesTop100Bilboard.size() >= 4 && cancionesTop100Bilboard.size() <= 6){
@@ -115,11 +115,6 @@ public class Compositor extends Persona {
         }
         return(salario + pagoExtra);
     }
-
-//    // Sobrecarga del metodo calcularSalario  de la clase padre Persona 
-//    public double calcularSalario(double valorExtra){
-//        return this.calcularSalario()+ valorExtra;
-//    }
 
     // Metodo To String 
     @Override

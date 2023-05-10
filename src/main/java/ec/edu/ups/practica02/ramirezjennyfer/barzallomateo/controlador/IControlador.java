@@ -15,5 +15,4 @@ public interface IControlador {
         public abstract Object read(Object obj); //R
         public abstract void update(Object obj); //U
         public abstract void delete(Object obj); //D
-        public abstract void list();
 }

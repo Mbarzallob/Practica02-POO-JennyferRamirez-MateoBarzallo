@@ -59,7 +59,7 @@ public class Cancion {
         this.tiempoEnMinutos = tiempoEnMinutos;
     }
     
-    // Metodo hashCode: 
+    // Metodo hashCode: Metodo que compara los objetos pasados devolviendo un numero entero 
     @Override
     public int hashCode() {
         int hash = 7;
@@ -70,7 +70,7 @@ public class Cancion {
         return hash;
     }
 
-    // Metodo equals: Metodo que permite comparar objetos
+    // Metodo equals: Metodo que permite comparar si los objetos son del mismo tipo
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
