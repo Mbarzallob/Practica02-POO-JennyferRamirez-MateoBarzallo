@@ -123,12 +123,29 @@ public class Cantante extends Persona{
         return Objects.equals(this.discografia, other.discografia);
     }
 
-    // Metodo calcularSalario sobreescrito de la clase padre Persona 
-    @Override
-    public double calcularSalario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    // Metodo el cual agrega un disco en la clase Cantante
+    public void agregarDisco(int codigo, String nombre, int anioDeLanzamiento){
+        Disco disco = new Disco(codigo, nombre, anioDeLanzamiento);
+        discografia.add(disco);
     }
 
+    // Metodo calcularSalario valor extra 
+    @Override
+    public double calcularSalario() {
+        double salario =super.getSalario();
+        double pagoExtra = 0;
+        if(numeroDeSencillos >= 1 && numeroDeSencillos <= 10){
+            pagoExtra = (salario * 5.0) / 100.0;
+        } else if(numeroDeGiras >= 1 && numeroDeGiras <= 3){
+            pagoExtra = (salario * 3.0) / 100.0;
+        } else if(numeroDeSencillos > 10 && numeroDeGiras >3 ){
+            pagoExtra = 1000;
+        } else if(discografia.size() >= 5){
+            pagoExtra = 2000;
+        }
+        return(salario + pagoExtra); 
+    }
+    
     // Metodo To String
     @Override
     public String toString() {

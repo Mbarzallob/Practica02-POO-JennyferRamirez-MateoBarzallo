@@ -77,8 +77,6 @@ public abstract class Persona {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-    // Metodo calcularSalario el cual permite 
-    public abstract double calcularSalario();
     
     // Metodo hashCode: 
     @Override
@@ -93,7 +91,7 @@ public abstract class Persona {
         return hash;
     }
 
-    // Metodo Equals: 
+    // Metodo equals: Metodo que permite comparar objetos
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -123,6 +121,9 @@ public abstract class Persona {
         }
         return Objects.equals(this.nacionalidad, other.nacionalidad);
     }
+    
+    // Metodo abstracto calcularSalario 
+    public abstract double calcularSalario();
 
     // Metodo To String 
     @Override

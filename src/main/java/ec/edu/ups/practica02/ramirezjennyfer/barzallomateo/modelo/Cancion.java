@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Cancion {
 
     // Atributos normales de la clase Canción
-    private int cancion;
+    private int codigo;
     private String titulo;
     private String letra;
     private double tiempoEnMinutos;
@@ -22,8 +22,8 @@ public class Cancion {
     }
     
     // Constructor donde se encuentran los datos de la clase Canción más los atributos de la clase padre Persona
-    public Cancion(int cancion, String titulo, String letra, double tiempoEnMinutos) {
-        this.cancion = cancion;
+    public Cancion(int codigo, String titulo, String letra, double tiempoEnMinutos) {
+        this.codigo = codigo;
         this.titulo = titulo;
         this.letra = letra;
         this.tiempoEnMinutos = tiempoEnMinutos;
@@ -31,11 +31,11 @@ public class Cancion {
 
     // Getter y setter: Encapsulamiento de los atributos
     // Getter y setter del Atributo canción
-    public int getCancion() {
-        return cancion;
+    public int getCodigo() {
+        return codigo;
     }
-    public void setCancion(int cancion) {
-        this.cancion = cancion;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
     // Getter y setter del Atributo titulo
     public String getTitulo() {
@@ -63,7 +63,7 @@ public class Cancion {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + this.cancion;
+        hash = 59 * hash + this.codigo;
         hash = 59 * hash + Objects.hashCode(this.titulo);
         hash = 59 * hash + Objects.hashCode(this.letra);
         hash = 59 * hash + (int) (Double.doubleToLongBits(this.tiempoEnMinutos) ^ (Double.doubleToLongBits(this.tiempoEnMinutos) >>> 32));
@@ -83,7 +83,7 @@ public class Cancion {
             return false;
         }
         final Cancion other = (Cancion) obj;
-        if (this.cancion != other.cancion) {
+        if (this.codigo != other.codigo) {
             return false;
         }
         if (Double.doubleToLongBits(this.tiempoEnMinutos) != Double.doubleToLongBits(other.tiempoEnMinutos)) {
@@ -98,6 +98,6 @@ public class Cancion {
     // Metodo To String
     @Override
     public String toString() {
-        return "Cancion{" + "cancion=" + cancion + ", titulo=" + titulo + ", letra=" + letra + ", tiempoEnMinutos=" + tiempoEnMinutos + '}';
+        return "Cancion{" + "codigo =" + codigo + ", titulo=" + titulo + ", letra=" + letra + ", tiempoEnMinutos=" + tiempoEnMinutos + '}';
     }
 }
